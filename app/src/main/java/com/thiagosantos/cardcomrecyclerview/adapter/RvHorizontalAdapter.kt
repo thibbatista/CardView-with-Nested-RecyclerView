@@ -1,21 +1,32 @@
 package com.thiagosantos.cardcomrecyclerview.adapter
 
+import android.content.ContentValues
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.appcompat.view.menu.MenuView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.thiagosantos.cardcomrecyclerview.R
 import com.thiagosantos.cardcomrecyclerview.databinding.ImageBinding
 import com.thiagosantos.cardcomrecyclerview.model.ImageItem
+import com.thiagosantos.cardcomrecyclerview.model.Salon
 
 class RvHorizontalAdapter(
+
     private val context: Context,
-    private val imageItemList: List<ImageItem>
+    private var imageItemList: List<ImageItem>,
+
 ) :
     RecyclerView.Adapter<RvHorizontalViewHolder>() {
+
+    var onItemClick : ((Int) -> Unit)? = null
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RvHorizontalViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -25,7 +36,17 @@ class RvHorizontalAdapter(
     }
 
     override fun onBindViewHolder(holder: RvHorizontalViewHolder, position: Int) {
-        holder.bind(imageItemList[position])
+        val imageItem = imageItemList[position]
+        holder.bind(imageItem)
+        holder.itemView.setOnClickListener {
+
+            onItemClick?.invoke(position)
+
+
+            println("imagem horizontal posição $position")
+
+        }
+
     }
 
     override fun getItemCount(): Int {
@@ -47,5 +68,6 @@ class RvHorizontalViewHolder(binding: ImageBinding) : RecyclerView.ViewHolder(bi
             .applyDefaultRequestOptions(requestOptions)
             .load(imageItem.imageUrl)
             .into(itemImage)
+
     }
 }
