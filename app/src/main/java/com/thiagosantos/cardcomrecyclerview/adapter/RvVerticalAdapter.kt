@@ -1,14 +1,11 @@
 package com.thiagosantos.cardcomrecyclerview.adapter
 
 import android.content.Context
-import android.graphics.Bitmap
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.BitmapTransformation
-import com.bumptech.glide.load.resource.bitmap.BitmapTransitionOptions
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
 import com.thiagosantos.cardcomrecyclerview.R
@@ -23,8 +20,6 @@ class RvVerticalAdapter(private val context: Context, private val SalonList: Lis
     private lateinit var recyclerView: RecyclerView
 
 
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemCardBinding.inflate(inflater, parent, false)
@@ -34,7 +29,7 @@ class RvVerticalAdapter(private val context: Context, private val SalonList: Lis
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
 
 
-        rvHorizontalAdapter = RvHorizontalAdapter(context,  SalonList[position].categoryItemList)
+        rvHorizontalAdapter = RvHorizontalAdapter(context, SalonList[position].categoryItemList)
 
         recyclerView = holder.itemRecycler
 
@@ -44,37 +39,19 @@ class RvVerticalAdapter(private val context: Context, private val SalonList: Lis
 
         holder.categoryTitle.text = SalonList[position].categoryTitle
 
-//        setCatItemRecycler(
-//            holder.itemRecycler,
-//            SalonList[position].categoryItemList
-//        )
 
         holder.bind(SalonList[position].categoryItemList[0])
 
         rvHorizontalAdapter.onItemClick = {
+
             holder.bind(SalonList[position].categoryItemList[it])
-            println("Usando Invoke e Unit para pega um Int entre classes $it")
+
         }
-
-
     }
 
     override fun getItemCount(): Int {
         return SalonList.size
     }
-
-//
-//    private fun setCatItemRecycler(
-//        recyclerView: RecyclerView,
-//        categoryItemList: List<ImageItem>
-//    ) {
-//
-//        val itemRecyclerAdapter = RvHorizontalAdapter(context, categoryItemList)
-//        recyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
-//        recyclerView.adapter = itemRecyclerAdapter
-//
-//    }
-
 }
 
 class MainViewHolder(binding: ItemCardBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -95,7 +72,6 @@ class MainViewHolder(binding: ItemCardBinding) : RecyclerView.ViewHolder(binding
             .transition(DrawableTransitionOptions.withCrossFade())
             .into(itemImage)
     }
-
 }
 
 
