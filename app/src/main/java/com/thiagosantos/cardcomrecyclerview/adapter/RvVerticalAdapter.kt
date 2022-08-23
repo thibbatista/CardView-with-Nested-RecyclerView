@@ -38,7 +38,7 @@ class RvVerticalAdapter(private val context: Context, private val SalonList: Lis
 
 
         holder.categoryTitle.text = SalonList[position].categoryTitle
-
+0
 
         holder.bind(SalonList[position].categoryItemList[0])
 
