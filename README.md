@@ -1,6 +1,6 @@
 # Aplicativo Android - Repositórios GitHub
 
-![](video.mp4) 
+![](gif1.gif) 
 
 Aplicativo Android para listar repositórios do github
 
