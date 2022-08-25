@@ -12,7 +12,7 @@ Lista
 
 Siga estas instruções para ter uma cópia do projeto funcionando em seu computador.
 
-> Caso não esteja interessado no desenvolvimento, vá para a página [Releases]() e baixe o compilado para executar.
+> Caso não esteja interessado no desenvolvimento, vá para a página [Releases](https://github.com/thibbatista/CardView-with-Nested-RecyclerView/releases) e baixe o compilado para executar.
 
 ### Pré-requisitos
 
