@@ -17,7 +17,7 @@ interface RetrofitService {
         private val retrofitService: RetrofitService by lazy {
 
             val retrofit = Retrofit.Builder()
-                .baseUrl("https://thibbatista.github.io/api_recyclerView/")
+                .baseUrl("https://thibbatista.github.io/Api_Fake_CardView/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 

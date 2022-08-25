@@ -42,9 +42,6 @@ class RvHorizontalAdapter(
 
             onItemClick?.invoke(position)
 
-
-            println("imagem horizontal posição $position")
-
         }
 
     }

@@ -38,13 +38,16 @@ class RvVerticalAdapter(private val context: Context, private val SalonList: Lis
 
 
         holder.categoryTitle.text = SalonList[position].categoryTitle
+        holder.address.text = SalonList[position].address
+        holder.note.text = SalonList[position].note.toString()
+        holder.evaluation.text = SalonList[position].evaluation.toString()
 0
 
-        holder.bind(SalonList[position].categoryItemList[0])
+        holder.bind(SalonList[position])
 
         rvHorizontalAdapter.onItemClick = {
 
-            holder.bind(SalonList[position].categoryItemList[it])
+           holder.click(SalonList[position].categoryItemList[it])
 
         }
     }
@@ -57,18 +60,33 @@ class RvVerticalAdapter(private val context: Context, private val SalonList: Lis
 class MainViewHolder(binding: ItemCardBinding) : RecyclerView.ViewHolder(binding.root) {
 
     private val itemImage = binding.ivCardImage
-    val categoryTitle = binding.catTitle
     val itemRecycler = binding.rvHorizontal
+    val categoryTitle = binding.tvNomeEstabelecimento
+    val address =  binding.tvEndereco
+    val note =  binding.nota
+    val evaluation = binding.qtAvaliacoes
 
 
-    fun bind(imageItem: ImageItem) {
+    fun bind(salon: Salon) {
         val requestOptions = RequestOptions()
             .placeholder(R.drawable.ic_launcher_background)
             .error(R.drawable.ic_launcher_background)
 
         Glide.with(itemView.context)
             .applyDefaultRequestOptions(requestOptions)
-            .load(imageItem.imageUrl)
+            .load(salon.image)
+            .transition(DrawableTransitionOptions.withCrossFade())
+            .into(itemImage)
+    }
+
+    fun click(item: ImageItem) {
+        val requestOptions = RequestOptions()
+            .placeholder(R.drawable.ic_launcher_background)
+            .error(R.drawable.ic_launcher_background)
+
+        Glide.with(itemView.context)
+            .applyDefaultRequestOptions(requestOptions)
+            .load(item.imageUrl)
             .transition(DrawableTransitionOptions.withCrossFade())
             .into(itemImage)
     }
