@@ -1,18 +1,18 @@
-# Aplicativo Android - Repositórios GitHub
+# Aplicativo Android - CardView With Neasted RecyclerView
 
 ![](gif1.gif) 
 
-Aplicativo Android para listar repositórios do github
+Aplicativo Android para exibir listas de card vertical aninhado com um lista horizontal
 
 ## Funcionalidades
 
-Pesquisa
+Lista
 
 ## Primeiros Passos
 
 Siga estas instruções para ter uma cópia do projeto funcionando em seu computador.
 
-> Caso não esteja interessado no desenvolvimento, vá para a página [Releases](https://github.com/thibbatista/Repositorios-GitHub/releases) e baixe o compilado para executar.
+> Caso não esteja interessado no desenvolvimento, vá para a página [Releases]() e baixe o compilado para executar.
 
 ### Pré-requisitos
 
@@ -66,18 +66,6 @@ No Android Studio, clique em Run → Run 'app'
 > A primeira execução irá demorar, pois a IDE irá montar e instalar o APK no dispositivo.
 
 
-## Demonstração
-
-#### Utilização
-
-
-```
-Na tela inicial toque pesquisar -> digite o nome do repositório -> toque na lupa
-Uma lista de repositórios será exibida
-```
-
-
-
 ## Deployment
 
 Distribua este projeto como um arquivo *.apk para instalar em um dispositivo Android ou enviar para a Play Store:
@@ -97,13 +85,7 @@ No Android Studio, com o botão direito sobre o projeto, vá em Build → Build 
 
 * RecyclerView
 * Retrofit
-* Coroutines
 * ViewModel
-* Koin
 * Glide
-* API GitHub
 
 
-## Licença
-
-Este projeto está licenciado sob a MIT License - leia [LICENSE.md](LICENSE.md) para mais detalhes.
