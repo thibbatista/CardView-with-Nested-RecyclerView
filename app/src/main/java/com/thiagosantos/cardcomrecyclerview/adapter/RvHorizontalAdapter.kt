@@ -10,6 +10,7 @@ import android.widget.ImageView
 import androidx.appcompat.view.menu.MenuView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
 import com.thiagosantos.cardcomrecyclerview.R
 import com.thiagosantos.cardcomrecyclerview.databinding.ImageBinding
@@ -58,12 +59,13 @@ class RvHorizontalViewHolder(binding: ImageBinding) : RecyclerView.ViewHolder(bi
 
     fun bind(imageItem: ImageItem) {
         val requestOptions = RequestOptions()
-            .placeholder(R.drawable.ic_launcher_background)
-            .error(R.drawable.ic_launcher_background)
+            .placeholder(R.drawable.placeholder)
+            .error(R.drawable.placeholder)
 
         Glide.with(itemView.context)
             .applyDefaultRequestOptions(requestOptions)
             .load(imageItem.imageUrl)
+            .transition(DrawableTransitionOptions.withCrossFade(2000))
             .into(itemImage)
 
     }

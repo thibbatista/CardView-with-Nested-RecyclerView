@@ -69,25 +69,25 @@ class MainViewHolder(binding: ItemCardBinding) : RecyclerView.ViewHolder(binding
 
     fun bind(salon: Salon) {
         val requestOptions = RequestOptions()
-            .placeholder(R.drawable.ic_launcher_background)
-            .error(R.drawable.ic_launcher_background)
+            .placeholder(R.drawable.placeholder)
+            .error(R.drawable.placeholder)
 
         Glide.with(itemView.context)
             .applyDefaultRequestOptions(requestOptions)
             .load(salon.image)
-            .transition(DrawableTransitionOptions.withCrossFade())
+            .transition(DrawableTransitionOptions.withCrossFade(2000))
             .into(itemImage)
     }
 
     fun click(item: ImageItem) {
         val requestOptions = RequestOptions()
-            .placeholder(R.drawable.ic_launcher_background)
-            .error(R.drawable.ic_launcher_background)
+            .placeholder(R.drawable.placeholder)
+            .error(R.drawable.placeholder)
 
         Glide.with(itemView.context)
             .applyDefaultRequestOptions(requestOptions)
             .load(item.imageUrl)
-            .transition(DrawableTransitionOptions.withCrossFade())
+            .transition(DrawableTransitionOptions.withCrossFade(2000))
             .into(itemImage)
     }
 }

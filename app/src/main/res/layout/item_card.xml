@@ -36,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Espaço Beleza"
-               app:layout_constraintBottom_toTopOf="@id/tv_endereco"
+                app:layout_constraintBottom_toTopOf="@id/tv_endereco"
                 app:layout_constraintStart_toStartOf="parent"
                 android:textSize="16dp"
                 android:textColor="@color/black"
@@ -68,7 +68,7 @@
                     android:id="@+id/iv_card_image"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/foto"
+                    android:src="@drawable/placeholder"
                     android:scaleType="centerCrop"
                     />
 
@@ -128,7 +128,7 @@
                         android:textSize="10sp"
                         app:layout_constraintStart_toStartOf="@id/qt_avaliacoes"
                         app:layout_constraintBottom_toBottomOf="parent"
-                         />
+                        />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
